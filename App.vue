@@ -1,17 +1,18 @@
 <template>
    <view class="container">
-      <text class="text-color-primary">{{ message }}</text>
-      <button title="Press me!" @press="exclaim" />
+      <text-and-button></text-and-button>
       <images></images>
    </view>
 </template>
 
 <script>
-import images from "./components/Images";
+import Images from "./components/Images";
+import TextAndButton from "./components/TextAndButton";
 
 export default {
    components: {
-      images
+      Images,
+      TextAndButton
    },
    data() {
       return {
@@ -32,9 +33,5 @@ export default {
    background-color: white;
    align-items: center;
    justify-content: center;
-}
-.text-color-primary {
-   color: blue;
-   font-size: 30;
 }
 </style>
