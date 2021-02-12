@@ -16,13 +16,11 @@ export default {
    },
    data() {
       return {
-         message: "Hello World"
+         //...
       };
    },
    methods: {
-      exclaim() {
-         this.message += "!";
-      },
+      //...
    },
 };
 </script>
