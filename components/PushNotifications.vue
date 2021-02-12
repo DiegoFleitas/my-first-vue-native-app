@@ -82,7 +82,7 @@ export default {
             title: this.title,
             body: this.body,
             data: { data: 'goes here' },
-            trigger: { seconds: 0 },
+            trigger: { seconds: 2 },
          }
       }
    },
