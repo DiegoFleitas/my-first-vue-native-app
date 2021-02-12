@@ -2,17 +2,20 @@
    <view class="container">
       <text-and-button></text-and-button>
       <images></images>
+      <fancy-button></fancy-button>
    </view>
 </template>
 
 <script>
 import Images from "./components/Images";
 import TextAndButton from "./components/TextAndButton";
+import FancyButton from "./components/FancyButton";
 
 export default {
    components: {
       Images,
-      TextAndButton
+      TextAndButton,
+      FancyButton
    },
    data() {
       return {
