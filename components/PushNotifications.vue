@@ -1,7 +1,7 @@
 <template>
    <view class="container">
-      <text>{{ text }}</text>
-      <text class="text-color-primary">{{JSON.stringify(notification.data)}}</text>
+      <text>{{ JSON.stringify(token) }}</text>
+      <text class="text-color-primary">{{ JSON.stringify(notification) }}</text>
    </view>
 </template>
 
@@ -63,7 +63,7 @@ export default {
    name: "PushNotifications",
    data() {
       return {
-         text: '',
+         token: '',
          notification: {
             title: "You've got mail! 📬",
             body: 'Here is the notification body',
@@ -76,7 +76,7 @@ export default {
       //...
    },
    created() {
-      registerForPushNotificationsAsync();
+      this.token = registerForPushNotificationsAsync();
       schedulePushNotification(this.notification);
    }
 }
