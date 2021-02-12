@@ -1,5 +1,8 @@
 <template>
    <view class="container">
+      <text-input v-model="title"></text-input>
+      <text-input v-model="body"></text-input>
+      <button title="Send me!" @press="sendNotification" />
       <text>{{ JSON.stringify(token) }}</text>
       <text class="text-color-primary">{{ JSON.stringify(notification) }}</text>
    </view>
@@ -63,21 +66,28 @@ export default {
    name: "PushNotifications",
    data() {
       return {
+         title: "You've got mail! 📬",
+         body: 'Here is the notification body',
          token: '',
-         notification: {
-            title: "You've got mail! 📬",
-            body: 'Here is the notification body',
-            data: { data: 'goes here' },
-            trigger: { seconds: 2 },
-         }
       };
    },
    methods: {
-      //...
+      sendNotification() {
+         schedulePushNotification(this.notification);
+      }
+   },
+   computed: {
+      notification() {
+         return {
+            title: this.title,
+            body: this.body,
+            data: { data: 'goes here' },
+            trigger: { seconds: 0 },
+         }
+      }
    },
    created() {
       this.token = registerForPushNotificationsAsync();
-      schedulePushNotification(this.notification);
    }
 }
 </script>
