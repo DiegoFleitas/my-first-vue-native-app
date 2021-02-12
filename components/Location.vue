@@ -1,7 +1,7 @@
 <template>
    <view class="container">
       <touchable-opacity :on-press="getLocation">
-         <text class="text-field-title">Get CACA</text>
+         <text class="text-field-title">Get Location</text>
       </touchable-opacity>
       <text class="text-field-title">Location Object:</text>
       <text>{{ location }}</text>
