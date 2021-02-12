@@ -3,6 +3,7 @@
       <text-and-button></text-and-button>
       <images></images>
       <fancy-button></fancy-button>
+      <location></location>
    </view>
 </template>
 
@@ -10,12 +11,14 @@
 import Images from "./components/Images";
 import TextAndButton from "./components/TextAndButton";
 import FancyButton from "./components/FancyButton";
+import Location from "./components/Location";
 
 export default {
    components: {
       Images,
       TextAndButton,
-      FancyButton
+      FancyButton,
+      Location
    },
    data() {
       return {
