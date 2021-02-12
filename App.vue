@@ -1,9 +1,10 @@
 <template>
    <view class="container">
-      <text-and-button></text-and-button>
-      <images></images>
-      <fancy-button></fancy-button>
-      <location></location>
+<!--      <text-and-button></text-and-button>-->
+<!--      <images></images>-->
+<!--      <fancy-button></fancy-button>-->
+<!--      <location></location>-->
+      <push-notifications></push-notifications>
    </view>
 </template>
 
@@ -12,13 +13,15 @@ import Images from "./components/Images";
 import TextAndButton from "./components/TextAndButton";
 import FancyButton from "./components/FancyButton";
 import Location from "./components/Location";
+import PushNotifications from "./components/PushNotifications";
 
 export default {
    components: {
       Images,
       TextAndButton,
       FancyButton,
-      Location
+      Location,
+      PushNotifications
    },
    data() {
       return {
