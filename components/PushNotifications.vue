@@ -17,14 +17,14 @@ Notifications.setNotificationHandler({
    }),
 });
 
-async function schedulePushNotification() {
+async function schedulePushNotification(notification) {
    await Notifications.scheduleNotificationAsync({
       content: {
-         title: "You've got mail! 📬",
-         body: 'Here is the notification body',
-         data: { data: 'goes here' },
+         title: notification.title,
+         body: notification.body,
+         data: notification.data,
       },
-      trigger: { seconds: 2 },
+      trigger: notification.trigger,
    });
 }
 
@@ -64,7 +64,12 @@ export default {
    data() {
       return {
          text: '',
-         notification: {}
+         notification: {
+            title: "You've got mail! 📬",
+            body: 'Here is the notification body',
+            data: { data: 'goes here' },
+            trigger: { seconds: 2 },
+         }
       };
    },
    methods: {
@@ -72,7 +77,7 @@ export default {
    },
    created() {
       registerForPushNotificationsAsync();
-      schedulePushNotification();
+      schedulePushNotification(this.notification);
    }
 }
 </script>
