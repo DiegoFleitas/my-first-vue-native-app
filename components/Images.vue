@@ -1,7 +1,7 @@
 <template>
    <view>
       <image
-          :source="require('./../assets/favicon.png')"
+          :source="require('../assets/favicon.png')"
       />
       <image
           :style="{width: 50, height: 50}"
